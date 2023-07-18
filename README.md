@@ -1,4 +1,3 @@
-
 # SlymeGPT <img src="assets/slyme.png" width="48" height="48">
 ## About
 OpenAI GPT API replication with `selenium webdriver` and `undetectable chromedriver`.  
