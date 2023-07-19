@@ -14,6 +14,7 @@ from slyme_utils import *
 
 UNTITLED_PLACEHOLDER = '[recently generated chat]'
 
+
 def driver_refresh(func):
     @functools.wraps(func)
     def wrapper(self, *args, **kwargs):
@@ -35,6 +36,7 @@ def driver_refresh(func):
             else:
                 raise e  
     return wrapper
+
 
 class ChatMain:
     @driver_refresh
@@ -85,7 +87,6 @@ class ChatMain:
         elements = self.driver.find_elements(By.CLASS_NAME, self.config.get('class', 'GPT_response_history'))
         self.last_response = elements[-1]
         
-
     def await_response(self):
         """
         Wait for response to appear
@@ -147,6 +148,7 @@ class ChatMain:
             return result
         except Exception:
             self.logger.error(f'Index overflow or text not found in element')
+
 
 class ChatSidebar:
     def get_proj(self, element):
@@ -234,8 +236,7 @@ class SlymeDriver(ChatMain, ChatSidebar):
         self.wait_sec = wait_sec        
         self.config = configparser.ConfigParser()
         self.config.read('config.ini')
-        self.logger = log_setup(self.config.get('dir', 'log_file'),
-                                console_level=None)
+        self.logger = log_setup(self.config.get('dir', 'log_file'), console_level=None)
         self.selected_chat = None
         
         self.get_driver(pfname)
@@ -288,8 +289,7 @@ class SlymeDriver(ChatMain, ChatSidebar):
             pass
     """
 
-    def enter_field(self, type, name, input, 
-                    sec=1, split_len=128):
+    def enter_field(self, type, name, input, sec=1, split_len=128):
 
         field = self.driver.find_element(type, name)
 
