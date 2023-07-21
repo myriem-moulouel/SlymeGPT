@@ -1,0 +1,28 @@
+undetected_chromedriver.patcher - DEBUG - getting release number from /LATEST_RELEASE
+undetected_chromedriver.patcher - DEBUG - downloading from https://chromedriver.storage.googleapis.com/114.0.5735.90/chromedriver_linux64.zip
+undetected_chromedriver.patcher - DEBUG - unzipping /var/tmp/tmpu9olkdao
+undetected_chromedriver.patcher - INFO - patching driver executable /home_sup/admin/.local/share/undetected_chromedriver/undetected_chromedriver
+undetected_chromedriver.patcher - DEBUG - found block:
+b'{window.cdc_adoQpoasnfa76pfcZLmcfl_Array = window.Array;window.cdc_adoQpoasnfa76pfcZLmcfl_Object = window.Object;window.cdc_adoQpoasnfa76pfcZLmcfl_Promise = window.Promise;window.cdc_adoQpoasnfa76pfcZLmcfl_Proxy = window.Proxy;window.cdc_adoQpoasnfa76pfcZLmcfl_Symbol = window.Symbol;}'
+replacing with:
+b'{console.log("undetected chromedriver 1337!")}                                                                                                                                                                                                                                               '
+undetected_chromedriver.patcher - DEBUG - patching took us 0.02 seconds
+root - INFO - Initialized Undetected Chromedriver
+root - INFO - Ready
+root - DEBUG - Selected latest chat. Name: "Plaisant emploi préféré.", Data Proj ID: "4"
+root - DEBUG - Entered input " Un jour, comment préparer des crépeaux nutés là s'il vous plaît...". Element: "class name", Name: "m-0.w-full.resize-none"
+root - DEBUG - Response element detected
+root - DEBUG - Response text located
+root - DEBUG - Single occurrence of "::after" pseudo-element not found.
+root - DEBUG - Pseudo-element not found after element update (1). The response may or may not have finished generating; please check its completeness in case of an abnormality.
+root - DEBUG - Pseudo-element not found after element update (2). The response may or may not have finished generating; please check its completeness in case of an abnormality.
+root - DEBUG - Pseudo-element not found after element update (3). The response may or may not have finished generating; please check its completeness in case of an abnormality.
+root - DEBUG - Pseudo-element not found after element update (4). The response may or may not have finished generating; please check its completeness in case of an abnormality.
+root - DEBUG - Pseudo-element not found after element update (5). The response may or may not have finished generating; please check its completeness in case of an abnormality.
+root - DEBUG - Pseudo-element not found after element update (6). The response may or may not have finished generating; please check its completeness in case of an abnormality.
+root - DEBUG - Pseudo-element not found after element update (7). The response may or may not have finished generating; please check its completeness in case of an abnormality.
+root - DEBUG - Pseudo-element not found after element update (8). The response may or may not have finished generating; please check its completeness in case of an abnormality.
+root - DEBUG - Pseudo-element not found after element update (9). The response may or may not have finished generating; please check its completeness in case of an abnormality.
+root - DEBUG - Pseudo-element not found after element update (10). The response may or may not have finished generating; please check its completeness in case of an abnormality.
+root - INFO - Response successfully generated: "Le travail qui me satisfait pleinement."
+root - INFO - Closed driver session
