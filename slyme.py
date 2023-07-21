@@ -15,6 +15,7 @@ from slyme_utils import *
 UNTITLED_PLACEHOLDER = '[recently generated chat]'
 
 
+
 def driver_refresh(func):
     @functools.wraps(func)
     def wrapper(self, *args, **kwargs):
@@ -44,7 +45,7 @@ class ChatMain:
         self.enter_field(type=By.CLASS_NAME, 
                          name=self.config.get('class', 'prompt_field'), 
                          input=prompt)
-        
+
         repeat_success(self.await_element)
         self.logger.debug('Response element detected')
         repeat_success(self.await_response)
@@ -73,6 +74,7 @@ class ChatMain:
             time.sleep(interval)
 
         response = elements[-1].text
+        print(response)
         char_limited_response = char_limiter(response)
 
         self.selected_chat = UNTITLED_PLACEHOLDER
@@ -92,6 +94,7 @@ class ChatMain:
         Wait for response to appear
         """
         self.last_response.text
+
 
     def property_script(self, property):
         return f"""
