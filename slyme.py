@@ -51,7 +51,8 @@ class ChatMain:
         repeat_success(self.await_response)
         self.logger.debug('Response text located')
 
-        elements = self.driver.find_elements(By.CLASS_NAME, self.config.get('class', 'GPT_response_history'))
+        elements = self.driver.find_elements(By.CLASS_NAME, 
+                                             self.config.get('class', 'GPT_response_history'))
         status = 1
 
         while status:
@@ -74,7 +75,6 @@ class ChatMain:
             time.sleep(interval)
 
         response = elements[-1].text
-        print(response)
         char_limited_response = char_limiter(response)
 
         self.selected_chat = UNTITLED_PLACEHOLDER
@@ -163,7 +163,11 @@ class ChatSidebar:
         chat_element.click()
         self.logger.debug('Successfully created new chat')
 
-        self.selected_chat = None
+        # self.selected_chat = None
+        self.selected_chat = chat_element.text
+        print(f'Selected chat. Name: "{chat_element.text}", Data Proj ID: "{self.get_proj(chat_element)}"')
+
+        self.logger.debug(f'Selected chat. Name: "{chat_element.text}", Data Proj ID: "{self.get_proj(chat_element)}"')
     
     @driver_refresh
     def select_chat(self, chat_name):
@@ -325,5 +329,3 @@ class SlymeDriver(ChatMain, ChatSidebar):
     def end_session(self):
         self.driver.quit()
         self.logger.info('Closed driver session')
-
-
